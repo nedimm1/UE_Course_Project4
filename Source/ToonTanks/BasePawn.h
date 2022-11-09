@@ -16,6 +16,19 @@ public:
 	// Sets default values for this pawn's properties
 	ABasePawn();
 
+	UPROPERTY(VisibleAnywhere)
+	int32 VisibleAnywhereInt = 12;
+
+	UPROPERTY(EditAnywhere)
+	int32 EditAnywhereInt = 22;
+
+	UPROPERTY(VisibleInstanceOnly)
+	int32 VisibleInstanceOnlyInt = 11;
+
+	UPROPERTY(EditAnywhere)
+	float Speed = 400.f;
+
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -33,6 +46,7 @@ private:
 
 	UPROPERTY()
 	USceneComponent* ProjectileSpawnPoint;
+
 
 public:	
 	// Called every frame
