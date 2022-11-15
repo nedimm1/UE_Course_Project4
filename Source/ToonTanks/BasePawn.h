@@ -23,6 +23,9 @@ public:
 
 
 
+protected:
+
+	void RotateTurret(FVector LookAtTarget);
 
 
 private:
@@ -47,7 +50,7 @@ private:
 
 
 
-
+    
 
 	
 
