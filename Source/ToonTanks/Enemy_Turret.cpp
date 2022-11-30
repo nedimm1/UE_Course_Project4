@@ -29,6 +29,11 @@ void AEnemy_Turret::BeginPlay()
 
 }
 
+void AEnemy_Turret::HandleDestruction()
+{
+    Super::HandleDestruction();
+    Destroy();
+}
 
 
 

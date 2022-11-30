@@ -19,6 +19,9 @@ class TOONTANKS_API AEnemy_Turret : public ABasePawn
 
 	virtual void Tick(float DeltaTime) override;
 
+	void HandleDestruction();
+
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
