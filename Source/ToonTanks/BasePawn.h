@@ -58,6 +58,8 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	class UParticleSystem* DeathParticles;
 
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	class USoundBase *DeathSound;
 
 
    
