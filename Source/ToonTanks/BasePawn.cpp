@@ -8,6 +8,7 @@
 #include "Projectile.h"
 #include "Kismet/GameplayStatics.h"
 #include "Particles/ParticleSystem.h"
+ 
 
 
 
@@ -45,6 +46,12 @@ void ABasePawn::RotateTurret(FVector LookAtTarget)
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation());
 	}
+
+	if (DeathCameraShakeClass)
+	{
+		GetWorld()->GetFirstPlayerController()->ClientPlayCameraShake(DeathCameraShakeClass);
+	}
+
 
 }
 

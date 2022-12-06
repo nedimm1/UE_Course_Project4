@@ -8,6 +8,8 @@
 #include "GameFramework/DamageType.h"
 #include "Kismet/GameplayStatics.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "MatineeCameraShake.h" 
+
 
 
 // Sets default values
@@ -78,11 +80,18 @@ void AProjectile::OnHit(UPrimitiveComponent *HitComp, AActor *OtherActor, UPrimi
 		{
 			UGameplayStatics::PlaySoundAtLocation(this, HitSound, GetActorLocation());
 		}
-		
+
     if (LaunchSound)
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, LaunchSound, GetActorLocation());
 	}
+
+	if (HitCameraShakeClass)
+		{
+			// UE 4.25 - ClientPlayCameraShake; UE 4.26+ ClientStartCameraShake
+			GetWorld()->GetFirstPlayerController()->ClientPlayCameraShake(HitCameraShakeClass);
+		}
+
 
     Destroy();
 	

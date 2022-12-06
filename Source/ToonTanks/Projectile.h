@@ -7,6 +7,7 @@
 #include "Projectile.generated.h"
 
 
+
 class USoundBase;
 
 UCLASS()
@@ -50,6 +51,8 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	USoundBase *HitSound;
 
+    UPROPERTY(EditAnywhere, Category = "Combat")
+	TSubclassOf<class UCameraShake> HitCameraShakeClass;
 
 
 
